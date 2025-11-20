@@ -1,0 +1,32 @@
+[
+  {
+    "title": "React",
+    "image": "file.svg",
+    "description": "Uma biblioteca JavaScript para criar interfaces de utilizador através de componentes reutilizáveis.",
+    "rating": 5
+  },
+  {
+    "title": "Next.js",
+    "image": "next.svg",
+    "description": "Framework baseada em React que permite rendering híbrido, rotas avançadas e otimizações automáticas.",
+    "rating": 5
+  },
+  {
+    "title": "TypeScript",
+    "image": "globe.svg",
+    "description": "Superconjunto do JavaScript que adiciona tipagem estática e ajuda a evitar erros comuns.",
+    "rating": 4
+  },
+  {
+    "title": "Tailwind CSS",
+    "image": "vercel.svg",
+    "description": "Framework de utilitários CSS que permite criar designs modernos rapidamente.",
+    "rating": 4
+  },
+  {
+    "title": "Node.js",
+    "image": "window.svg",
+    "description": "Ambiente de execução JavaScript no lado do servidor, ideal para aplicações escaláveis.",
+    "rating": 5
+  }
+]
