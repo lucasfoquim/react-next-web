@@ -1,0 +1,1 @@
+vercel - react-next-web-lab9-2se6nhxrt-lucasfoquims-projects.vercel.app 
