@@ -28,5 +28,24 @@
     "image": "window.svg",
     "description": "Ambiente de execução JavaScript no lado do servidor, ideal para aplicações escaláveis.",
     "rating": 5
+  },
+  {
+    "title": "JavaScript",
+    "image": "js.svg",
+    "description": "Linguagem de programação que adiciona interatividade ao frontend.",
+    "rating": 5
+  },
+  {
+    "title": "CSS",
+    "image": "css.svg",
+    "description": "Folhas de estilo responsáveis pela aparência e layout das páginas.",
+    "rating": 4
+  },
+  {
+    "title": "HTML",
+    "image": "html.svg",
+    "description": "Linguagem de marcação utilizada para estruturar páginas web.",
+    "rating": 4
   }
 ]
+
