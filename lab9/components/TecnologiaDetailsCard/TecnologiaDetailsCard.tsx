@@ -1,4 +1,5 @@
-// app/components/TecnologiaDetailsCard.tsx
+import ContadorPersonalizado from "@/components/ContadorPersonalizado/ContadorPersonalizado";
+
 interface TecnologiaDetailsProps {
     title: string;
     image: string;
@@ -6,14 +7,13 @@ interface TecnologiaDetailsProps {
     rating: number;
 }
 
-export default function TecnologiaDetailsCard({title, image, description, rating}: TecnologiaDetailsProps) {
+export default function TecnologiaDetailsCard({ title, image, description, rating }: TecnologiaDetailsProps) {
 
     return (
-
         <div className="p-4 rounded-2xl bg-pink-700 text-white max-w-xl mx-auto">
-            
+
             <h2 className="text-2xl font-bold mb-3">{title}</h2>
-            
+
             <img 
                 src={image} 
                 alt={title} 
@@ -22,7 +22,10 @@ export default function TecnologiaDetailsCard({title, image, description, rating
 
             <p className="mb-4">{description}</p>
 
-            <p className="font-semibold">⭐ Rating: {rating}/5</p>
+            <p className="font-semibold mb-3">⭐ Rating: {rating}/5</p>
+
+            {/* Like button no Details */}
+            <ContadorPersonalizado title={title} />
         </div>
     );
 }

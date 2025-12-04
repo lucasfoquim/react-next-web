@@ -1,14 +1,16 @@
+import ContadorPersonalizado from "@/components/ContadorPersonalizado/ContadorPersonalizado";
+
 interface TecnologiaProps {
-    nome : string;
+    nome: string;
 }
 
-
-export default function TecnologiaCard({nome}: TecnologiaProps) {
-
-
+export default function TecnologiaCard({ nome }: TecnologiaProps) {
     return (
         <div className="p-2 m-2 bg-pink-800 text-white rounded-2xl">
             <h2>{nome}</h2>
+
+            {/* Like button */}
+            <ContadorPersonalizado title={nome} />
         </div>
-    )
+    );
 }
