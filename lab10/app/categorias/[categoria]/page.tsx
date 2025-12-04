@@ -1,26 +1,32 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import Link from "next/link";
+import { ParamValue } from "next/dist/server/request/params";
 
-export default function ProdutosPage() {
+export default function CategoriaPage() {
+  const params = useParams();
   const [produtos, setProdutos] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!params?.categoria) return;
+
     fetch("https://deisishop.pythonanywhere.com/products")
       .then(res => res.json())
       .then(data => {
-        setProdutos(data);
+        const produtosFiltrados = data.filter((p: { category: ParamValue; }) => p.category === params.categoria);
+        setProdutos(produtosFiltrados);
         setLoading(false);
       });
-  }, []);
+  }, [params?.categoria]);
 
-  if (loading) return <p>A carregar produtos...</p>;
+  if (loading) return <p>A carregar produtos da categoria...</p>;
 
   return (
     <div>
-      <h1>Produtos</h1>
+      <h1>Categoria: {params.categoria}</h1>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
         {produtos.map(p => (
           <Link
