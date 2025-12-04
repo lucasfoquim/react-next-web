@@ -2,15 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Produto } from "@/types";
 
 export default function ProdutosPage() {
-  const [produtos, setProdutos] = useState<any[]>([]);
+  const [produtos, setProdutos] = useState<Produto[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://deisishop.pythonanywhere.com/products")
       .then(res => res.json())
-      .then(data => {
+      .then((data: Produto[]) => {
         setProdutos(data);
         setLoading(false);
       });
@@ -22,7 +23,7 @@ export default function ProdutosPage() {
     <div>
       <h1>Produtos</h1>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-        {produtos.map(p => (
+        {produtos.map((p: Produto) => (
           <Link
             key={p.id}
             href={`/produtos/${p.id}`}

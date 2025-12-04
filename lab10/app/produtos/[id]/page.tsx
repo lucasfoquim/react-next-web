@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import { Produto } from "@/lib/types";
 
 export default function ProdutoPage() {
   const params = useParams();
-  const [produto, setProduto] = useState<any>(null);
+  const [produto, setProduto] = useState<Produto | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -13,7 +14,7 @@ export default function ProdutoPage() {
 
     fetch(`https://deisishop.pythonanywhere.com/product/${params.id}`)
       .then(res => res.json())
-      .then(data => {
+      .then((data: Produto) => {
         setProduto(data);
         setLoading(false);
       });
