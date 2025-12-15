@@ -28,6 +28,7 @@ export default function DescricaoProjetos() {
 
             {projetos.map(projeto => (
             <Projeto 
+            key ={projeto.nome}
             nome ={projeto.nome}
             url={projeto.url} 
             />

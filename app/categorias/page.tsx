@@ -3,14 +3,18 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+type Categoria = {
+  name: string;
+};
+
 export default function CategoriasPage() {
-  const [categorias, setCategorias] = useState<string[]>([]);
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://deisishop.pythonanywhere.com/categories")
       .then(res => res.json())
-      .then(data => {
+      .then((data: Categoria[]) => {
         setCategorias(data);
         setLoading(false);
       });
@@ -22,9 +26,11 @@ export default function CategoriasPage() {
     <div>
       <h1>Categorias</h1>
       <ul>
-        {categorias.map(cat => (
-          <li key={cat}>
-            <Link href={`/categorias/${cat}`}>{cat}</Link>
+        {categorias.map((cat) => (
+          <li key={cat.name}>
+            <Link href={`/categorias/${cat.name}`}>
+              {cat.name}
+            </Link>
           </li>
         ))}
       </ul>
